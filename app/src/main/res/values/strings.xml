@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Stringhe in ITALIANO -->
+
+<resources>
+	<string name="app_name">AppLoud</string>
+	<string name="title_app_detail">Dettagli App</string>
+	<string name="ring_icon_descr">Volume Suoneria</string>
+	<string name="media_icon_descr">Volume Musica</string>
+	<string name="notify_icon_descr">Volume Notifiche</string>
+	<string name="sys_icon_descr">Volume Sistema</string>
+	<string name="line_separator_descr">Separatore</string>
+	<string name="toggle_button">Ignora</string>
+	<string name="detail_frag_role">Configura i parametri da modificare, \
+		disattiva quelli che vuoi mantenere inalterati</string>
+	<string name="setting_visual_feedback">Feedback visuale</string>
+	<string name="setting_visual_feedback_summ">Mostra la barra \
+		ogni volta che cambia il volume</string>
+	<string name="setting_vibro_feedback">Vibrazione</string>
+	<string name="setting_vibro_feedback_summ">Vibra ogni volta che cambia il volume</string>
+	<string name="setting_audio_feedback">Feedback sonoro</string>
+	<string name="setting_audio_feedback_summ">Riproduci un suono \
+		ogni volta che cambia il volume</string>
+	<string name="action_settings_title">Impostazioni</string>
+	<string name="progress_load_title">Caricando…</string>
+	<string name="progress_load_summ">Per favore, aspetta mentre i \
+		dati vengono caricati</string>
+	<string name="stop_menu_title">Ferma</string>
+	<string name="start_menu_title">Avvia</string>
+	<string name="info_menu_title">Informazioni</string>
+	<!-- <string name="play_pause_summ">Ferma/riavvia il controllo del volume</string> -->
+	<string name="status_on">attivato</string>
+	<string name="status_off">disattivato</string>
+	<string name="status_summ">Il controllo del volume è:</string>
+	<string name="roto_label_descr">Rotazione Schermo</string>
+	<string name="gps_label_descr">GPS</string>
+	<string name="search_menu_title">Cerca</string>
+	<string name="search_hint">Cerca nella lista</string>
+</resources>
