@@ -44,13 +44,18 @@ public class BackgroundService extends AppLoudPreferenceListenerService {
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId){
-		Log.w("Svc", "Start command called with id "+startId);
 		SharedPreferences pref = PreferenceManager.
 				getDefaultSharedPreferences(this.getApplicationContext());
 		threadShouldRun = pref.getBoolean(THREAD_PREF_KEY, true);
 		decideFlags(pref);
-		new FillerThread(this, helper, db).start();
-		Log.w("Svc", "Boot completed, starto thread");
+		Thread filler = new FillerThread(this, helper, db);
+		filler.start();
+		try {
+			filler.join();
+		}
+		catch(InterruptedException e) {
+			stopSelf();
+		}
 		thread = new BackgroundThread(this);
 		changeThreadStatus();
 		return START_STICKY;
@@ -60,7 +65,7 @@ public class BackgroundService extends AppLoudPreferenceListenerService {
 	public IBinder onBind(Intent intent){
 		return binder;
 	}
-	
+
 	@Override
 	protected void changeThreadStatus(){
 		if(!threadShouldRun)

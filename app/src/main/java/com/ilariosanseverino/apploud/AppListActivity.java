@@ -10,6 +10,7 @@ import android.app.SearchManager;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.ilariosanseverino.apploud.service.BackgroundService;
 import com.ilariosanseverino.apploud.ui.AppListDataModel;
 import com.ilariosanseverino.apploud.ui.AppListItem;
 
@@ -94,13 +95,14 @@ public class AppListActivity extends AppLoudMenuActivity implements AppListFragm
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(/*savedInstanceState*/null);
 
-		Intent intent = getIntent();
-		if(Intent.ACTION_SEARCH.equals(intent.getAction()))
-			searchString = intent.getStringExtra(SearchManager.QUERY);
-
 		progr = ProgressDialog.show(this,
 				getResources().getString(R.string.progress_load_title),
 				getResources().getString(R.string.progress_load_summ));
+		startService(new Intent(this, BackgroundService.class));
+
+		Intent intent = getIntent();
+		if(Intent.ACTION_SEARCH.equals(intent.getAction()))
+			searchString = intent.getStringExtra(SearchManager.QUERY);
 
 		bindBackgroundService();
 	}
